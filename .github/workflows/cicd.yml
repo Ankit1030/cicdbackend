@@ -27,7 +27,18 @@ jobs:
       - name: Pull image from Docker Hub
         run: docker pull ankit1030/cicdbackend:latest
       - name: Delete Old Container
-        run: docker rm -f nodejsBackend
+        run: docker rm -f nodejsBackend || true
       - name: Run docker Container
-        run: docker container -d -p 4000:4000 --name nodejsBackend ankit1030/cicdbackend:latest
+        run: docker container -d --init -p 4000:4000 --name nodejsBackend ankit1030/cicdbackend
     
+
+  #  deploy:
+  #   needs: build
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Pull image from docker hub
+  #       run: docker pull integrationninjas/nodejs-app:latest
+  #     - name: Delete old container
+  #       run: docker rm -f nodejs-app-container  
+  #     - name: Run docker container
+  #       run: docker run -d -p 4000:4000 --name nodejs-app-container integrationninjas/nodejs-app   
