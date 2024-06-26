@@ -25,7 +25,7 @@ jobs:
     runs-on: self-hosted
     steps: 
     - name: Pull image from Docker Hub
-      run: docker pull ankit1030/cicdbackend:latest
+      run: docker pull ankit1030/cicdbackend
     - name: Delete Old Container
       run: docker rm -f nodejsBackend
     - name: Run docker Container
