@@ -23,7 +23,7 @@ jobs:
 deploy:
   needs: build
   runs-on: self-hosted
-  steps:
+  steps: 
     - name: Pull image from Docker Hub
       run: docker pull ankit1030/cicdbackend:latest
     - name: Delete Old Container
