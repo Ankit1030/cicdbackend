@@ -20,10 +20,10 @@ jobs:
       - name: Push image to Docker Hub
         run: docker push ankit1030/cicdbackend:latest
 
-deploy:
-  needs: build
-  runs-on: self-hosted
-  steps: 
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps: 
     - name: Pull image from Docker Hub
       run: docker pull ankit1030/cicdbackend:latest
     - name: Delete Old Container
