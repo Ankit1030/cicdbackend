@@ -18,7 +18,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t ankit1030/cicdbackend .
       - name: Push image to Docker Hub
-        run: docker push ankit1030/cicdbackend:latest
+        run: docker push ankit1030/cicdbackend:latest 
 
   deploy:
     needs: build
