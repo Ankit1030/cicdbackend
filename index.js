@@ -61,7 +61,7 @@ app.use('/vehiclepricing',VehiclePricing)
 app.use('/country',country)
 app.use('/users',users)
 app.use('/drivers',drivers)
-app.use('/settings',Setting)
+app.use('/settings',Setting) 
 
 
 
